@@ -8,14 +8,14 @@ export default function Header({ variant = "transparent" }) {
       <nav className="nav">
         <Link href="/">Home</Link>
         <Link href="/products">Products</Link>
-        <a href="/#gallery">Gallery</a>
-        <a href="/#contact">Contact</a>
+        <Link href="/gallery">Gallery</Link>
+        <Link href="/contact">Contact</Link>
       </nav>
 
       <div className="socials">
-        <a href="#">IG</a>
-        <a href="#">FB</a>
-        <a href="#">TW</a>
+        <a href="#" title="Instagram">IG</a>
+        <a href="#" title="Facebook">FB</a>
+        <a href="#" title="Twitter">TW</a>
       </div>
     </header>
   );

@@ -824,6 +824,303 @@ a {
 }
 
 /* ====================================================
+   GALLERY PAGE
+   ==================================================== */
+
+.galleryPage {
+  padding: 100px 24px !important;
+  background: var(--color-surface) !important;
+}
+
+.galleryGridLarge {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-auto-rows: 380px;
+  gap: 24px !important;
+}
+
+.galleryGridLarge .galleryCard:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.galleryCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-ocean);
+  cursor: pointer;
+}
+
+.galleryCard.featured {
+  grid-auto-rows: 762px;
+}
+
+.galleryImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.galleryImageWrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.galleryCard:hover .galleryImageWrapper img {
+  transform: scale(1.08);
+}
+
+.galleryOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 29, 38, 0.4) 0%, rgba(11, 29, 38, 0.8) 100%);
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 28px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.galleryCard:hover .galleryOverlay {
+  opacity: 1;
+}
+
+.overlayContent h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 8px;
+  font-family: var(--font-heading), Georgia, serif;
+  letter-spacing: 0.3px;
+}
+
+.overlayContent p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
+/* ====================================================
+   CONTACT PAGE
+   ==================================================== */
+
+.contactSection {
+  padding: 100px 24px !important;
+  background: var(--color-surface) !important;
+}
+
+.contactContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: start;
+}
+
+.contactInfo h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+  color: var(--color-primary);
+}
+
+.contactInfo > p {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.infoCards {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+}
+
+.infoCard {
+  padding: 24px;
+  background: var(--color-light);
+  border-radius: 12px;
+  border-left: 4px solid var(--color-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.infoIcon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.infoCard h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.infoCard p {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* ====================================================
+   CONTACT FORM
+   ==================================================== */
+
+.contactFormWrapper {
+  padding: 40px;
+  background: var(--color-light);
+  border-radius: 16px;
+}
+
+.contactForm h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  color: var(--color-primary);
+  letter-spacing: 0.3px;
+}
+
+.formGroup {
+  display: flex !important;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--color-text-main);
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.formGroupRow {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+.formGroupRow .formGroup {
+  margin-bottom: 0;
+}
+
+.formSubmitBtn {
+  width: 100%;
+  padding: 14px 32px !important;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.formSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formNote {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 14px;
+  font-style: italic;
+}
+
+/* ====================================================
+   SUCCESS MESSAGE
+   ==================================================== */
+
+.successMessage {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #0284c7 100%);
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successMessage h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.successMessage p {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ====================================================
    RESPONSIVE
    ==================================================== */
 
@@ -845,6 +1142,14 @@ a {
     grid-column: span 2;
     grid-row: span 1;
   }
+  .galleryGridLarge {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 300px;
+  }
+  .galleryGridLarge .galleryCard:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
   .header {
     padding: 20px 32px;
   }
@@ -852,6 +1157,10 @@ a {
     gap: 40px !important;
   }
   .detailContentInner {
+    gap: 48px !important;
+  }
+  .contactContainer {
+    grid-template-columns: 1fr !important;
     gap: 48px !important;
   }
 }
@@ -891,11 +1200,22 @@ a {
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 2;
   }
+  .galleryGridLarge {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: 280px;
+  }
+  .galleryGridLarge .galleryCard:nth-child(1) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
   .highlightProducts {
     padding: 80px 20px;
   }
   .gallery {
     padding: 80px 20px;
+  }
+  .galleryPage {
+    padding: 60px 20px !important;
   }
   .ctaBanner {
     padding: 70px 20px !important;
@@ -929,6 +1249,22 @@ a {
   }
   .detailCta {
     flex-direction: column;
+  }
+  .contactSection {
+    padding: 60px 20px !important;
+  }
+  .contactContainer {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .contactFormWrapper {
+    padding: 24px;
+  }
+  .formGroupRow {
+    grid-template-columns: 1fr !important;
+  }
+  .formSubmitBtn {
+    padding: 14px 24px !important;
   }
 }
 
