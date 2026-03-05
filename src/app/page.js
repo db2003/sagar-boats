@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import Counter from "../components/Counter";
@@ -9,6 +10,7 @@ export default function Home() {
 
   return (
     <>
+      <Header />
       <Hero />
 
       {/* ── About Section ─────────────────────── */}
