@@ -83,6 +83,7 @@ export default function Home() {
           <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 2" /></div>
           <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 3" /></div>
           <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 4" /></div>
+          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 5" /></div>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "../../components/Header";
 import ProductCard from "../../components/ProductCard";
 import products from "../../data/products";
@@ -59,7 +60,7 @@ export default function ProductsPage() {
       <section className="ctaBanner">
         <h2>Need a Custom Build?</h2>
         <p>We build bespoke boats tailored to your exact specifications.</p>
-        <button className="cta">Get in Touch</button>
+        <Link href="/contact" className="cta">Get in Touch</Link>
       </section>
 
       <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>

@@ -107,19 +107,21 @@ export default function ContactPage() {
 
             <div className="infoCards">
               <div className="infoCard">
-                <div className="infoIcon">�</div>
+                <div className="infoIcon">💬</div>
                 <h3>WhatsApp</h3>
-                <a href="https://wa.me/919876543210?text=Hi, I'm interested in learning more about Swastik Boats and would like to request a quote." target="_blank" rel="noopener noreferrer" className="contactLink">+91 98765 43210</a>
+                <a href="https://wa.me/919529203461?text=Hi, I'm interested in learning more about Swastik Boats and would like to request a quote." target="_blank" rel="noopener noreferrer" className="contactLink">+91 95292 03461</a>
               </div>
               <div className="infoCard">
-                <div className="infoIcon">�📧</div>
+                <div className="infoIcon">📧</div>
                 <h3>Email</h3>
-                <p>contact@sagarboats.com</p>
+                <p>
+                  <a href="mailto:swastikboats@gmail.com" className="contactLink">swastikboats@gmail.com</a>
+                </p>
               </div>
               <div className="infoCard">
-                <div className="infoIcon">📱</div>
+                <div className="infoIcon">☎️</div>
                 <h3>Phone</h3>
-                <p>+91 98765 43210</p>
+                <a href="tel:+919822398641" className="contactLink">+91 98223 98641</a>
               </div>
               <div className="infoCard">
                 <div className="infoIcon">📍</div>

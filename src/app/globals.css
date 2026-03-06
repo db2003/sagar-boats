@@ -260,6 +260,64 @@ a {
 }
 
 /* ====================================================
+   HAMBURGER MENU (mobile)
+   ==================================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10000;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.mobileMenuOverlay {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 88px);
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9998;
+  overflow-y: auto;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.mobileMenu a {
+  padding: 16px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.mobileMenu a:hover {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--color-accent);
+}
+
+/* ====================================================
    HERO (homepage)
    ==================================================== */
 
@@ -273,6 +331,8 @@ a {
   justify-content: center;
   overflow: hidden;
   background: var(--color-ocean);
+  margin-top: calc(var(--header-height) * -1);
+  flex-shrink: 0;
 }
 
 .heroBg {
@@ -333,7 +393,7 @@ a {
 
 .heroBtns {
   display: flex !important;
-  gap: 16px;
+  gap: 16px !important;
   justify-content: center;
   margin-top: 36px;
 }
@@ -361,16 +421,6 @@ a {
   background: var(--color-accent);
   width: 28px;
   border-radius: 5px;
-}
-
-/* Ensure page content sits below fixed header by default */
-.siteContent {
-  padding-top: var(--header-height);
-}
-
-/* Pull the homepage hero up underneath the fixed header so it overlays */
-.hero {
-  margin-top: calc(var(--header-height) * -1);
 }
 
 /* ====================================================
@@ -411,6 +461,7 @@ a {
   font-family: var(--font-body), system-ui, sans-serif;
   transition: all 0.3s ease;
   text-decoration: none;
+  display: inline-block;
 }
 
 .cta-outline:hover {
@@ -569,8 +620,8 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  grid-auto-rows: 260px;
+  grid-template-columns: repeat(5, 1fr) !important;
+  grid-auto-rows: 240px;
   gap: 16px;
 }
 
@@ -581,8 +632,8 @@ a {
 }
 
 .galleryGrid .galleryItem:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .galleryGrid .galleryItem img {
@@ -1257,6 +1308,9 @@ a {
 .aboutSection {
   padding: 120px 24px !important;
   background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-light) 100%) !important;
+  scroll-margin-top: 88px;
+  position: relative;
+  z-index: 1;
 }
 
 .aboutContainer {
@@ -1266,6 +1320,8 @@ a {
   grid-template-columns: 1fr 1fr !important;
   gap: 80px !important;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .aboutImage {
@@ -1274,6 +1330,7 @@ a {
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.4s ease;
+  z-index: 1;
 }
 
 .aboutImage:hover {
@@ -1430,6 +1487,12 @@ a {
   .socials {
     display: none !important;
   }
+  .hamburger {
+    display: flex !important;
+  }
+  .mobileMenuOverlay {
+    display: block !important;
+  }
   .productRow {
     grid-template-columns: 1fr !important;
     max-width: 460px;
@@ -1474,6 +1537,11 @@ a {
   }
   .ctaBanner {
     padding: 70px 20px !important;
+  }
+  .hero {
+    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
   }
   .heroBtns {
     flex-direction: column;
@@ -1631,144 +1699,6 @@ a {
   background: var(--color-accent);
   border-color: var(--color-accent);
   transform: translateY(-2px);
-}
-
-/* ── Hero ───────────────────────────────────── */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--color-ocean);
-}
-
-.heroBg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 1s ease-in-out;
-}
-
-.heroBg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 29, 38, 0.5) 0%,
-    rgba(11, 29, 38, 0.3) 40%,
-    rgba(11, 29, 38, 0.7) 100%
-  );
-}
-
-.heroOverlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 700px;
-  padding: 0 24px;
-}
-
-.heroOverlay .hero-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 20px;
-}
-
-.heroOverlay h1 {
-  font-size: clamp(36px, 6vw, 64px);
-  line-height: 1.18;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.heroOverlay p {
-  margin-top: 20px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.heroBtns {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 36px;
-}
-
-.cta {
-  padding: 14px 32px;
-  border: none;
-  background: var(--color-accent);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: var(--font-body), system-ui, sans-serif;
-  transition: all 0.3s ease;
-  letter-spacing: 0.3px;
-}
-
-.cta:hover {
-  background: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
-}
-
-.cta-outline {
-  padding: 14px 32px;
-  border: 1.5px solid rgba(255,255,255,0.35);
-  background: transparent;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: var(--font-body), system-ui, sans-serif;
-  transition: all 0.3s ease;
-}
-
-.cta-outline:hover {
-  border-color: white;
-  background: rgba(255,255,255,0.08);
-}
-
-.heroIndicators {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 3;
-}
-
-.heroIndicators span {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.heroIndicators span.active {
-  background: var(--color-accent);
-  width: 28px;
-  border-radius: 5px;
 }
 
 /* ── Products Section ───────────────────────── */
