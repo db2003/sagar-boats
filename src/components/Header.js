@@ -20,9 +20,14 @@ export default function Header({ variant = "transparent" }) {
   }, []);
 
   const isDark = variant === "dark";
+  const headerClass = isDark 
+    ? "header headerDark" 
+    : isScrolled 
+      ? "header headerScrolled"
+      : "header";
 
   return (
-    <header className={variant === "dark" ? "header headerDark" : "header"}>
+    <header className={headerClass}>
       <Link href="/" className="logo">Swastik Boats</Link>
 
       <nav className="nav">

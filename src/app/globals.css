@@ -569,8 +569,8 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  grid-auto-rows: 260px;
+  grid-template-columns: repeat(5, 1fr) !important;
+  grid-auto-rows: 240px;
   gap: 16px;
 }
 
@@ -581,8 +581,8 @@ a {
 }
 
 .galleryGrid .galleryItem:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .galleryGrid .galleryItem img {
@@ -1257,6 +1257,7 @@ a {
 .aboutSection {
   padding: 120px 24px !important;
   background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-light) 100%) !important;
+  margin-top: 0 !important;
 }
 
 .aboutContainer {

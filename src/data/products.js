@@ -3,7 +3,7 @@ const products = [
     slug: "elite-scull-boat",
     title: "Elite Scull Boat",
     subtitle: "Lightweight single scull designed for competitive rowers",
-    category: "Single Scull",
+    category: "Boats",
     price: "₹12,50,000",
     image: "/placeholder.jpg",
     description:
@@ -29,7 +29,7 @@ const products = [
     slug: "carbon-racing-shell",
     title: "Carbon Racing Shell",
     subtitle: "Full carbon construction for maximum speed",
-    category: "Racing Shell",
+    category: "Boats",
     price: "₹18,75,000",
     image: "/placeholder.jpg",
     description:
@@ -55,7 +55,7 @@ const products = [
     slug: "professional-rowing-boat",
     title: "Professional Rowing Boat",
     subtitle: "Engineered for training and championship racing",
-    category: "Training",
+    category: "Boats",
     price: "₹9,80,000",
     image: "/placeholder.jpg",
     description:
@@ -81,7 +81,7 @@ const products = [
     slug: "coastal-double-scull",
     title: "Coastal Double Scull",
     subtitle: "Built to handle open water and coastal rowing",
-    category: "Coastal",
+    category: "Boats",
     price: "₹22,00,000",
     image: "/placeholder.jpg",
     description:
@@ -107,7 +107,7 @@ const products = [
     slug: "quad-scull-trainer",
     title: "Quad Scull Trainer",
     subtitle: "Four-person crew boat for team training",
-    category: "Team",
+    category: "Boats",
     price: "₹28,50,000",
     image: "/placeholder.jpg",
     description:
@@ -133,7 +133,7 @@ const products = [
     slug: "junior-training-scull",
     title: "Junior Training Scull",
     subtitle: "Purpose-built for young and developing rowers",
-    category: "Junior",
+    category: "Boats",
     price: "₹6,90,000",
     image: "/placeholder.jpg",
     description:
