@@ -260,6 +260,64 @@ a {
 }
 
 /* ====================================================
+   HAMBURGER MENU (mobile)
+   ==================================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10000;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.mobileMenuOverlay {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 88px);
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9998;
+  overflow-y: auto;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.mobileMenu a {
+  padding: 16px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.mobileMenu a:hover {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--color-accent);
+}
+
+/* ====================================================
    HERO (homepage)
    ==================================================== */
 
@@ -1429,6 +1487,12 @@ a {
   .socials {
     display: none !important;
   }
+  .hamburger {
+    display: flex !important;
+  }
+  .mobileMenuOverlay {
+    display: block !important;
+  }
   .productRow {
     grid-template-columns: 1fr !important;
     max-width: 460px;
@@ -1473,6 +1537,11 @@ a {
   }
   .ctaBanner {
     padding: 70px 20px !important;
+  }
+  .hero {
+    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
   }
   .heroBtns {
     flex-direction: column;
