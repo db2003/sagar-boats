@@ -660,6 +660,65 @@ a {
 }
 
 /* ====================================================
+   HOMEPAGE GALLERY CAROUSEL
+   ==================================================== */
+
+.homepageGalleryCarouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.homepageGalleryCarousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-light);
+}
+
+.homepageGalleryCarousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galleryCarouselIndicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.galleryCarouselIndicators span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.galleryCarouselIndicators span.active {
+  background: white;
+  width: 32px;
+  border-radius: 6px;
+  border-color: white;
+}
+
+.galleryCarouselIndicators span:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ====================================================
    CTA BANNER
    ==================================================== */
 
@@ -848,6 +907,61 @@ a {
   height: 480px !important;
   object-fit: cover;
   display: block;
+}
+
+/* Product Image Carousel */
+.productImageCarouselWrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.productImageCarousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-light);
+}
+
+.productCarouselImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block !important;
+}
+
+.productImageIndicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.productImageIndicators span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.productImageIndicators span.active {
+  background: white;
+  width: 32px;
+  border-radius: 6px;
+  border-color: white;
+}
+
+.productImageIndicators span:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .detailHeroInfo {
@@ -1447,6 +1561,9 @@ a {
     grid-column: span 2;
     grid-row: span 1;
   }
+  .homepageGalleryCarouselWrapper {
+    height: 420px;
+  }
   .galleryGridLarge {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-auto-rows: 300px;
@@ -1517,6 +1634,9 @@ a {
   }
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 2;
+  }
+  .homepageGalleryCarouselWrapper {
+    height: 300px;
   }
   .galleryGridLarge {
     grid-template-columns: 1fr !important;
@@ -1629,6 +1749,9 @@ a {
   }
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 1;
+  }
+  .homepageGalleryCarouselWrapper {
+    height: 240px;
   }
 }
 

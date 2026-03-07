@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import Counter from "../components/Counter";
+import HomepageGalleryCarousel from "../components/HomepageGalleryCarousel";
 import products from "../data/products";
 
 export default function Home() {
@@ -78,13 +79,7 @@ export default function Home() {
           <p>A glimpse into our world of precision boat building.</p>
         </div>
 
-        <div className="galleryGrid">
-          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 1" /></div>
-          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 2" /></div>
-          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 3" /></div>
-          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 4" /></div>
-          <div className="galleryItem"><img src="/placeholder.jpg" alt="Gallery 5" /></div>
-        </div>
+        <HomepageGalleryCarousel />
       </section>
 
       {/* ── CTA Banner ────────────────────── */}
