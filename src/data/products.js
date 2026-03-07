@@ -104,6 +104,33 @@ const products = [
     ],
   },
   {
+    slug: "coxless-pair",
+    title: "Coxless Pair",
+    subtitle: "Two-rower boat with exceptional glide and stability",
+    category: "Boats",
+    price: "₹16,50,000",
+    image: "/boats/coxless pair 1.jpg",
+    images: ["/boats/coxless pair 1.jpg", "/boats/coxless pair.jpg"],
+    description:
+      "The Coxless Pair is engineered for two rowers seeking a lightweight, responsive boat that delivers excellent glide and acceleration. Perfect for paired racing or training, this boat combines speed with stability.",
+    specs: {
+      length: "10.5 m",
+      beam: "0.58 m",
+      weight: "27 kg",
+      material: "Carbon Fiber Composite",
+      capacity: "2 Rowers",
+      hull: "Round Bottom",
+    },
+    features: [
+      "Lightweight construction for optimal speed",
+      "Exceptional glide characteristics",
+      "Balanced weight distribution",
+      "Responsive handling",
+      "Competition-ready design",
+      "Multiple angle viewing imagery",
+    ],
+  },
+  {
     slug: "quad-scull-trainer",
     title: "Quad Scull Trainer",
     subtitle: "Four-person crew boat for team training",
@@ -211,7 +238,7 @@ const products = [
     slug: "training-accessories",
     title: "Training & Maintenance Accessories",
     subtitle: "Essential tools for boat care and training",
-    category: "Others",
+    category: "Ergometer",
     price: "₹5,000",
     image: "/placeholder.jpg",
     description:
@@ -237,7 +264,7 @@ const products = [
     slug: "custom-decals",
     title: "Custom Boat Decals & Branding",
     subtitle: "Personalize your boat with custom graphics",
-    category: "Others",
+    category: "Ergometer",
     price: "₹2,500",
     image: "/placeholder.jpg",
     description:

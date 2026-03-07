@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../../components/Header";
 import ProductCard from "../../../components/ProductCard";
+import ProductImageCarousel from "../../../components/ProductImageCarousel";
 import products from "../../../data/products";
 
 export function generateStaticParams() {
@@ -42,7 +43,10 @@ export default async function ProductDetail({ params }) {
 
         <div className="detailHeroInner">
           <div className="detailHeroImage">
-            <img src={product.image} alt={product.title} />
+            <ProductImageCarousel 
+              images={product.images || [product.image]} 
+              title={product.title}
+            />
           </div>
 
           <div className="detailHeroInfo">
