@@ -18,29 +18,25 @@ export default function Home() {
       <section className="aboutSection">
         <div className="aboutContainer">
           <div className="aboutImage">
-            <img src="/placeholder.jpg" alt="Swastik Boats Craftsmanship" />
+            <img src="/boats/Rajesh Lunawat Founder and Creator of the Legacy.jpg" alt="Rajesh Lunawat – Founder of Swastik Fibchem Limited" />
           </div>
           <div className="aboutContent">
-            <span className="hero-label">Our Story</span>
-            <h2>About Us</h2>
+            <span className="hero-label">Our Legacy</span>
+            <h2>About Rajesh Lunawat</h2>
             <p>
-              Swastik Boats has been at the forefront of precision boat manufacturing for over two decades. 
-              Our commitment to excellence, innovation, and quality craftsmanship has made us the trusted choice 
-              for competitive rowers, rowing clubs, and athletic organizations worldwide.
+              <strong>Rajesh Lunawat</strong>, founder of Swastik Fibchem Limited, is a pioneering entrepreneur who recognized a unique opportunity in competitive rowing. In 1995, he established India's first manufacturer of international-quality racing rowing boats and composite marine products—a vision that has endured and thrived for nearly three decades.
             </p>
             <p>
-              From humble beginnings as a small workshop to becoming an industry leader, we've maintained 
-              our core values: precision engineering, sustainable practices, and unwavering dedication to performance. 
-              Every boat we build carries our legacy of expertise and passion for rowing.
+              Invited to Germany to study advanced boat-building techniques under rowing engineer Klaus Filter, Lunawat brought European precision and innovation back to India. Today, Swastik Fibchem Limited stands as a symbol of engineering excellence, producing world-class racing shells from Single Sculls to Eight-person boats using cutting-edge materials like Carbon Fiber and Kevlar.
             </p>
             
             <div className="aboutStats">
-              <Counter finalNumber={25} label="Years of Excellence" />
+              <Counter finalNumber={30} label="Years of Excellence" />
               <Counter finalNumber={500} label="Boats Delivered" />
             </div>
             
             <div className="aboutCta">
-              <Link href="/gallery" className="cta-outline">View Our Work</Link>
+              <Link href="/about" className="cta">Read More</Link>
             </div>
           </div>
         </div>
