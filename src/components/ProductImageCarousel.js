@@ -2,19 +2,19 @@
 
 import { useState, useEffect } from "react";
 
-export default function ProductImageCarousel({ images, title }) {
+export default function ProductImageCarousel({ images, title, interval = 5000 }) {
   const [index, setIndex] = useState(0);
   const imageList = images && images.length > 0 ? images : ["/placeholder.jpg"];
 
   useEffect(() => {
     if (imageList.length <= 1) return;
 
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % imageList.length);
-    }, 5000);
+    }, interval);
 
-    return () => clearInterval(interval);
-  }, [imageList.length]);
+    return () => clearInterval(timer);
+  }, [imageList.length, interval]);
 
   return (
     <div className="productImageCarouselWrapper">
