@@ -46,6 +46,7 @@ export default async function ProductDetail({ params }) {
             <ProductImageCarousel 
               images={product.images || [product.image]} 
               title={product.title}
+              interval={product.slug === "single-scull" ? 2000 : 5000}
             />
           </div>
 
@@ -67,16 +68,69 @@ export default async function ProductDetail({ params }) {
         <div className="detailContentInner">
           <div className="specsBlock">
             <h2>Specifications</h2>
-            <table className="specsTable">
-              <tbody>
-                {Object.entries(product.specs).map(([key, value]) => (
-                  <tr key={key}>
-                    <td>{key}</td>
-                    <td>{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            {product.variants ? (
+              // Display variant-based specs
+              <div className="variantsSpecsLayout">
+                {/* Main Specs */}
+                <div className="mainSpecsBox">
+                  <h3>Core Specifications</h3>
+                  <div className="specsGrid">
+                    {Object.entries(product.specs).map(([key, value]) => (
+                      <div key={key} className="specItem">
+                        <span className="specLabel">{key}:</span>
+                        <span className="specValue">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Variants with Tables */}
+                <div className="variantsTablesSection">
+                  <h3>Available Variants</h3>
+                  <div className="variantsTableGrid">
+                    {product.variants.map((variant, index) => (
+                      <div key={index} className="variantTableWrapper">
+                        <h4>{variant.name}</h4>
+                        <table className="variantSpecsTable">
+                          <tbody>
+                            <tr>
+                              <td className="specKey">Average Crew Weight</td>
+                              <td>{variant.avgCrewWeight}</td>
+                            </tr>
+                            <tr>
+                              <td className="specKey">Crew Weight Range</td>
+                              <td>{variant.crewWeightRange}</td>
+                            </tr>
+                            <tr>
+                              <td className="specKey">Length</td>
+                              <td>{variant.lengths.length}</td>
+                            </tr>
+                            {variant.specs && Object.entries(variant.specs).map(([key, value]) => (
+                              <tr key={key}>
+                                <td className="specKey">{key.charAt(0).toUpperCase() + key.slice(1)}</td>
+                                <td>{value}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Display regular specs for other boats
+              <table className="specsTable">
+                <tbody>
+                  {Object.entries(product.specs).map(([key, value]) => (
+                    <tr key={key}>
+                      <td>{key}</td>
+                      <td>{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
 
           <div className="featuresBlock">
