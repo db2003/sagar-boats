@@ -3,15 +3,17 @@ import { notFound } from "next/navigation";
 import Header from "../../../components/Header";
 import ProductCard from "../../../components/ProductCard";
 import ProductImageCarousel from "../../../components/ProductImageCarousel";
-import products from "../../../data/products";
+import products, { formatBoatClass } from "../../../data/products";
+
+const boatProducts = products.filter((p) => !p.isSparePart);
 
 export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  return boatProducts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = boatProducts.find((p) => p.slug === slug);
   if (!product) return {};
   return {
     title: `${product.title} — Swastik Boats`,
@@ -21,11 +23,11 @@ export async function generateMetadata({ params }) {
 
 export default async function ProductDetail({ params }) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = boatProducts.find((p) => p.slug === slug);
 
   if (!product) notFound();
 
-  const related = products.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = boatProducts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <>
@@ -36,7 +38,7 @@ export default async function ProductDetail({ params }) {
         <div className="breadcrumb">
           <Link href="/">Home</Link>
           <span>/</span>
-          <Link href="/products">Boats</Link>
+          <Link href="/products">Products</Link>
           <span>/</span>
           <span className="current">{product.title}</span>
         </div>
@@ -46,7 +48,7 @@ export default async function ProductDetail({ params }) {
             <ProductImageCarousel 
               images={product.images || [product.image]} 
               title={product.title}
-              interval={product.slug === "single-scull" ? 2000 : 5000}
+              interval={5000}
             />
           </div>
 
@@ -58,6 +60,7 @@ export default async function ProductDetail({ params }) {
 
             <div className="detailCta">
               <Link href="/contact" className="cta">Request Quote</Link>
+              <a href="/boats/specifications.pdf" download className="cta" style={{ background: "var(--color-secondary)", display: "inline-block" }}>Download All Boats Specification Sheet (PDF)</a>
             </div>
           </div>
         </div>
@@ -78,7 +81,9 @@ export default async function ProductDetail({ params }) {
                     {Object.entries(product.specs).map(([key, value]) => (
                       <div key={key} className="specItem">
                         <span className="specLabel">{key}:</span>
-                        <span className="specValue">{value}</span>
+                        <span className="specValue">
+                          {key === "class" ? formatBoatClass(value) : value}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -102,7 +107,7 @@ export default async function ProductDetail({ params }) {
                               <td>{variant.crewWeightRange}</td>
                             </tr>
                             <tr>
-                              <td className="specKey">Length</td>
+                              <td className="specKey">Boat Length</td>
                               <td>{variant.lengths.length}</td>
                             </tr>
                             {variant.specs && Object.entries(variant.specs).map(([key, value]) => (
@@ -119,13 +124,13 @@ export default async function ProductDetail({ params }) {
                 </div>
               </div>
             ) : (
-              // Display regular specs for other boats
+              // Display regular specs for non-variant products
               <table className="specsTable">
                 <tbody>
                   {Object.entries(product.specs).map(([key, value]) => (
                     <tr key={key}>
                       <td>{key}</td>
-                      <td>{value}</td>
+                      <td>{key === "class" ? formatBoatClass(value) : value}</td>
                     </tr>
                   ))}
                 </tbody>
