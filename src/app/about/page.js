@@ -46,7 +46,6 @@ export default function AboutPage() {
 
             {/* ── Early Vision ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">🚀</div>
               <h3>Early Vision &amp; Entrepreneurial Journey</h3>
               <p>
                 In the mid-1990s, when specialized sports equipment manufacturing in India was still
@@ -63,7 +62,6 @@ export default function AboutPage() {
 
             {/* ── Germany Invitation ── */}
             <div className="aboutBlock aboutBlockHighlight">
-              <div className="aboutBlockIcon">🇩🇪</div>
               <h3>International Recognition &amp; the Germany Invitation (1995)</h3>
               <p>
                 A significant milestone in Rajesh Lunawat's journey came in 1995, when he was invited to
@@ -85,7 +83,6 @@ export default function AboutPage() {
 
             {/* ── Establishing the Company ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">🏭</div>
               <h3>Establishing Swastik Fibchem Limited</h3>
               <p>
                 Following this formative period, Swastik Fibchem Limited began developing and manufacturing
@@ -108,7 +105,6 @@ export default function AboutPage() {
 
             {/* ── Innovation in Composite ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">⚡</div>
               <h3>Innovation in Composite Manufacturing</h3>
               <p>
                 Under Rajesh Lunawat's leadership, Swastik Fibchem Limited adopted advanced composite
@@ -116,22 +112,18 @@ export default function AboutPage() {
               </p>
               <div className="materialsGrid">
                 <div className="materialCard">
-                  <div className="materialIcon">🔬</div>
                   <h4>Carbon Fiber</h4>
                   <p>Ultra-lightweight, exceptional strength-to-weight ratio</p>
                 </div>
                 <div className="materialCard">
-                  <div className="materialIcon">🛡️</div>
                   <h4>Kevlar Reinforcement</h4>
                   <p>Superior impact resistance and structural integrity</p>
                 </div>
                 <div className="materialCard">
-                  <div className="materialIcon">🧬</div>
                   <h4>Nomex Honeycomb Core</h4>
                   <p>Optimal stiffness with minimal weight penalty</p>
                 </div>
                 <div className="materialCard">
-                  <div className="materialIcon">🔧</div>
                   <h4>Vacuum-Sealed Epoxy</h4>
                   <p>Precision curing for flawless composite layup</p>
                 </div>
@@ -144,7 +136,6 @@ export default function AboutPage() {
 
             {/* ── Global Brand ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">🌍</div>
               <h3>Building an Indian Brand for the Global Rowing Community</h3>
               <p>
                 Rajesh Lunawat's vision extended beyond domestic manufacturing. From the beginning, he
@@ -160,7 +151,6 @@ export default function AboutPage() {
 
             {/* ── Commitment to Quality ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">✨</div>
               <h3>Commitment to Quality &amp; Performance</h3>
               <p>
                 For Lunawat, manufacturing high-performance boats is not simply a business — it is a pursuit
@@ -175,7 +165,6 @@ export default function AboutPage() {
 
             {/* ── Contribution to Sport ── */}
             <div className="aboutBlock">
-              <div className="aboutBlockIcon">🏅</div>
               <h3>Contribution to the Sport of Rowing</h3>
               <p>
                 Through the establishment of Swastik Fibchem Limited in 1995, Rajesh Lunawat contributed
@@ -187,7 +176,6 @@ export default function AboutPage() {
 
             {/* ── Looking Forward ── */}
             <div className="aboutBlock aboutBlockFuture">
-              <div className="aboutBlockIcon">🔮</div>
               <h3>Looking Toward the Future</h3>
               <p>
                 As the global rowing community continues to evolve, Swastik Fibchem Limited remains focused

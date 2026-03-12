@@ -30,6 +30,9 @@ export default function ProductImageCarousel({ images, title, interval = 5000 })
               opacity: i === index ? 1 : 0,
               position: "absolute",
               inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
               transition: "opacity 0.6s ease-in-out",
             }}
           />
